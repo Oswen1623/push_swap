@@ -6,7 +6,7 @@
 /*   By: lucinguy <lucinguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 12:35:06 by lucinguy          #+#    #+#             */
-/*   Updated: 2025/12/12 12:40:00 by lucinguy         ###   ########.fr       */
+/*   Updated: 2025/12/12 16:29:47 by lucinguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <limits.h>
 # include <stdarg.h>
+# include <stdlib.h>
 # include <unistd.h>
 
 // Printf

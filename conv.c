@@ -6,11 +6,11 @@
 /*   By: lucinguy <lucinguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 12:27:02 by lucinguy          #+#    #+#             */
-/*   Updated: 2025/11/27 13:35:53 by lucinguy         ###   ########.fr       */
+/*   Updated: 2025/12/12 16:29:18 by lucinguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "push_swap.h"
 
 int	ft_putnbr_t_fd(long n, int fd)
 {
