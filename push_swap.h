@@ -6,7 +6,7 @@
 /*   By: lucinguy <lucinguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 12:35:06 by lucinguy          #+#    #+#             */
-/*   Updated: 2025/12/12 12:36:49 by lucinguy         ###   ########.fr       */
+/*   Updated: 2025/12/12 12:40:00 by lucinguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,8 @@ size_t	ft_putstr_fd_pf(char *s, int fd);
 int		ft_putnbr_t_fd(long n, int fd);
 int		ft_putnbr_base_x(unsigned long n, int uppercase, int fd);
 int		ft_putpointer(unsigned long n, int fd);
+
+// Utils
+char	**ft_split(char const *s, char c);
 
 #endif
