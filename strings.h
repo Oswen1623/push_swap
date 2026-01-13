@@ -1,11 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   strings.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lucinguy <lucinguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/10 11:38:59 by lucinguy          #+#    #+#             */
-/*   Updated: 2026/01/13 16:57:41 by lucinguy         ###   ########.fr       */
+/*   Created: 2026/01/13 16:56:47 by lucinguy          #+#    #+#             */
+/*   Updated: 2026/01/13 17:24:16 by lucinguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+char	**multiple_strings(int argc, char **argv)
+{
+	long	*args;
+	int		i;
+	int		j;
+
+	args = malloc(sizeof(long) * argc - 1);
+	i = 0;
+	j = 1;
+	if (argc == 2)
+	{
+		while (argv[j++])
+		{
+			args[i++] = ft_atol(argv[j]);
+		}
+	}
+	args[i++] = '\0';
+	return (args);
+}

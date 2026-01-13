@@ -6,7 +6,7 @@
 /*   By: lucinguy <lucinguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 12:35:06 by lucinguy          #+#    #+#             */
-/*   Updated: 2025/12/12 16:29:47 by lucinguy         ###   ########.fr       */
+/*   Updated: 2026/01/13 15:51:32 by lucinguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,14 @@
 # include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
+
+// Push swap
+/// Principal
+
+// Algorithm
+
+/// Utils
+long	ft_atol(const char *str);
 
 // Printf
 /// Principal

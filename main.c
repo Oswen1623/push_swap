@@ -6,7 +6,7 @@
 /*   By: lucinguy <lucinguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 15:25:58 by lucinguy          #+#    #+#             */
-/*   Updated: 2025/12/12 17:17:20 by lucinguy         ###   ########.fr       */
+/*   Updated: 2026/01/13 17:17:54 by lucinguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,25 @@
 
 int	main(int argc, char **argv)
 {
-	char	**newstring;
+	void	**newstring;
 	int		i;
+	long	convd[argc - 1];
 
-	// t_stack_node	a;
-	// t_stack_node	b;
-	// a = NULL;
-	// b = NULL;
 	newstring = NULL;
 	i = 0;
+	convd[0] = 0;
 	if ((argc == 1) || (argc == 2 && !argv[1][0]))
 		return (1);
 	else if (argc == 2)
+	{
 		newstring = ft_split(argv[1], ' ');
-	// while (newstring[i <= argc])
-	// {
-	// 	ft_printf("%s\n", newstring[i++]);
-	// }
-	ft_printf("%s\n", newstring[0]);
-	ft_printf("%s\n", newstring[1]);
-	ft_printf("%s\n", newstring[2]);
+		while (newstring[i++])
+			newstring[i] = ft_atol(newstring[i]);
+	}
+	else
+		newstring = multiple_args(argc, **argv);
+	if (!newstring)
+		return (1);
+	free(newstring);
+	return (0);
 }
