@@ -6,9 +6,11 @@
 /*   By: lucinguy <lucinguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 17:09:39 by lucinguy          #+#    #+#             */
-/*   Updated: 2026/01/13 15:51:33 by lucinguy         ###   ########.fr       */
+/*   Updated: 2026/01/16 16:36:01 by lucinguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "push_swap.h"
 
 long	ft_atol(const char *str)
 {

@@ -1,35 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strings.h                                          :+:      :+:    :+:   */
+/*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lucinguy <lucinguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/13 16:56:47 by lucinguy          #+#    #+#             */
-/*   Updated: 2026/01/16 15:15:57 by lucinguy         ###   ########.fr       */
+/*   Created: 2026/01/16 16:25:19 by lucinguy          #+#    #+#             */
+/*   Updated: 2026/01/21 13:46:17 by lucinguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-char	**multiple_strings(int argc, char **argv)
+int	isnum(char c)
 {
-	long	*args;
-	int		i;
-	int		j;
+	if (!(c >= 0 && c <= 9))
+		return (0);
+	else
+		return (1);
+}
+int	check_args(char **argv)
+{
+	int	i;
+	int	j;
 
-	args = malloc(sizeof(long) * (argc - 1));
-	if (!args)
-		return (NULL);
 	i = 0;
-	j = 1;
-	if (argc == 2)
+	j = 0;
+	while (argv[i++])
 	{
-		while (argv[j++])
+		j = 0;
+		while (argv[i][j])
 		{
-			args[i++] = ft_atol(argv[j]);
+			if (!(isnum(argv[j++])))
+			{
+				error();
+			}
 		}
 	}
-	args[i++] = '\0';
-	return (args);
+}
+void	error(void)
+{
+	ft_printf("Error\n");
+	exit(EXIT_FAILURE);
 }

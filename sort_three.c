@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strings.h                                          :+:      :+:    :+:   */
+/*   sort_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lucinguy <lucinguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/13 16:56:47 by lucinguy          #+#    #+#             */
-/*   Updated: 2026/01/16 15:15:57 by lucinguy         ###   ########.fr       */
+/*   Created: 2026/01/21 13:45:35 by lucinguy          #+#    #+#             */
+/*   Updated: 2026/01/21 13:49:00 by lucinguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-char	**multiple_strings(int argc, char **argv)
+void	sort_three(t_stack_node **a)
 {
-	long	*args;
-	int		i;
-	int		j;
+	t_stack_node	*biggest_node;
 
-	args = malloc(sizeof(long) * (argc - 1));
-	if (!args)
-		return (NULL);
-	i = 0;
-	j = 1;
-	if (argc == 2)
-	{
-		while (argv[j++])
-		{
-			args[i++] = ft_atol(argv[j]);
-		}
-	}
-	args[i++] = '\0';
-	return (args);
+	biggest_node = find_max(*a);
+	if (biggest_node == *a)
+		ra(a, false);
+	else if ((*a)->next == biggest_node)
+		rra(a, false);
+	if ((*a)->nbr > (*a)->next->nbr)
+		sa(a, false);
 }
