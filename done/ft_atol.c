@@ -1,35 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strings.h                                          :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lucinguy <lucinguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/13 16:56:47 by lucinguy          #+#    #+#             */
-/*   Updated: 2026/01/16 15:15:57 by lucinguy         ###   ########.fr       */
+/*   Created: 2025/12/12 17:09:39 by lucinguy          #+#    #+#             */
+/*   Updated: 2026/01/23 14:19:05 by lucinguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-char	**multiple_strings(int argc, char **argv)
+long	ft_atol(const char *str)
 {
-	long	*args;
+	long	num;
+	int		isneg;
 	int		i;
-	int		j;
 
-	args = malloc(sizeof(long) * (argc - 1));
-	if (!args)
-		return (NULL);
+	num = 0;
+	isneg = 1;
 	i = 0;
-	j = 1;
-	if (argc == 2)
+	while (str[i] && (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
+			|| str[i] == '\r' || str[i] == '\v' || str[i] == '\f'))
+		i++;
+	if (str[i] == '+' || str[i] == '-')
 	{
-		while (argv[j++])
-		{
-			args[i++] = ft_atol(argv[j]);
-		}
+		if (str[i] == '-')
+			isneg *= -1;
+		i++;
 	}
-	args[i++] = '\0';
-	return (args);
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		num = (num * 10) + (str[i] - '0');
+		i++;
+	}
+	return (num * isneg);
 }

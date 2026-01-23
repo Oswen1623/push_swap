@@ -1,45 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lucinguy <lucinguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/12 12:34:15 by lucinguy          #+#    #+#             */
-/*   Updated: 2026/01/16 15:25:00 by lucinguy         ###   ########.fr       */
+/*   Created: 2025/12/10 15:25:58 by lucinguy          #+#    #+#             */
+/*   Updated: 2026/01/23 14:20:52 by lucinguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	isnum(char c)
+int	main(int argc, char **argv)
 {
-	if (!(c >= 0 && c <= 9))
-		return (0);
-	else
-		return (1);
-}
-int	check_args(char **argv)
-{
-	int	i;
-	int	j;
+	t_stack_node	*a;
+	t_stack_node	*b;
 
-	i = 0;
-	j = 0;
-	while (argv[i++])
+	a = NULL;
+	b = NULL;
+	if (argc == 1 || (argc == 2 && !argv[1][0]))
+		return (1);
+	else if (argc == 2)
+		argv = ft_split(argv[1], ' ');
+	init_stack_a(&a, argv + 1);
+	if (!stack_sorted(a))
 	{
-		j = 0;
-		while (argv[i][j])
-		{
-			if (!(isnum(argv[j++])))
-			{
-				error();
-			}
-		}
+		if (stack_len(a) == 2)
+			sa(&a, false);
+		else if (stack_len(a) == 3)
+			sort_three(&a);
+		else
+			sort_stacks(&a, &b);
 	}
-}
-void	error(void)
-{
-	ft_printf("Error\n");
-	exit(EXIT_FAILURE);
+	free_stack(&a);
+	return (0);
 }
