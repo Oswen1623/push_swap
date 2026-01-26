@@ -6,7 +6,7 @@
 /*   By: lucinguy <lucinguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 12:17:49 by lucinguy          #+#    #+#             */
-/*   Updated: 2026/01/23 17:29:24 by lucinguy         ###   ########.fr       */
+/*   Updated: 2026/01/26 13:43:42 by lucinguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ void	init_stack_a(t_stack_node **a, char **argv)
 		i++;
 	}
 }
+
 t_stack_node	*get_cheapest(t_stack_node *stack)
 {
 	if (!stack)
