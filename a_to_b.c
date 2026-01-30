@@ -6,13 +6,13 @@
 /*   By: lucinguy <lucinguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 15:33:05 by lucinguy          #+#    #+#             */
-/*   Updated: 2026/01/27 15:33:03 by lucinguy         ###   ########.fr       */
+/*   Updated: 2026/01/30 18:42:41 by lucinguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	index(t_stack_node *stack)
+void	current_index(t_stack_node *stack)
 {
 	int	i;
 	int	median;
@@ -102,8 +102,8 @@ void	set_cheapest(t_stack_node *stack)
 
 void	init_a_nodes(t_stack_node *a, t_stack_node *b)
 {
-	index(a);
-	index(b);
+	current_index(a);
+	current_index(b);
 	target_a(a, b);
 	cost_a(a, b);
 	set_cheapest(a);

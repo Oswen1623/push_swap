@@ -6,7 +6,7 @@
 /*   By: lucinguy <lucinguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 13:44:24 by lucinguy          #+#    #+#             */
-/*   Updated: 2026/01/29 17:06:21 by lucinguy         ###   ########.fr       */
+/*   Updated: 2026/01/30 18:42:41 by lucinguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,14 +39,14 @@ static void	move_a_to_b(t_stack_node **a, t_stack_node **b)
 	else if (!(cheapest_node->above_median)
 		&& !(cheapest_node->target_node->above_median))
 		rotate_nodes(a, b, cheapest_node, 1);
-	prep_for_push(a, cheapest_node, 'a');
-	prep_for_push(b, cheapest_node->target_node, 'b');
+	prep_push(a, cheapest_node, 'a');
+	prep_push(b, cheapest_node->target_node, 'b');
 	pb(b, a, false);
 }
 
 static void	move_b_to_a(t_stack_node **a, t_stack_node **b)
 {
-	prep_for_push(a, (*b)->target_node, 'a');
+	prep_push(a, (*b)->target_node, 'a');
 	pa(a, b, false);
 }
 
@@ -72,13 +72,13 @@ void	sort_stacks(t_stack_node **a, t_stack_node **b)
 		pb(b, a, false);
 	while (len_a-- > 3 && !stack_sorted(*a))
 	{
-		init_nodes_a(*a, *b);
+		init_a_nodes(*a, *b);
 		move_a_to_b(a, b);
 	}
 	sort_three(a);
 	while (*b)
 	{
-		init_nodes_b(*a, *b);
+		init_b_nodes(*a, *b);
 		move_b_to_a(a, b);
 	}
 	current_index(*a);

@@ -6,7 +6,7 @@
 /*   By: lucinguy <lucinguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 15:32:55 by lucinguy          #+#    #+#             */
-/*   Updated: 2026/01/27 15:49:22 by lucinguy         ###   ########.fr       */
+/*   Updated: 2026/01/30 18:42:41 by lucinguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static void	target_b(t_stack_node *a, t_stack_node *b)
 
 void	init_b_nodes(t_stack_node *a, t_stack_node *b)
 {
-	index(a);
-	index(b);
+	current_index(a);
+	current_index(b);
 	target_b(a, b);
 }

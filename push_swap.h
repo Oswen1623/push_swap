@@ -6,7 +6,7 @@
 /*   By: lucinguy <lucinguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 12:35:06 by lucinguy          #+#    #+#             */
-/*   Updated: 2026/01/29 17:31:59 by lucinguy         ###   ########.fr       */
+/*   Updated: 2026/01/30 18:51:53 by lucinguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ typedef struct s_stack_node
 }						t_stack_node;
 
 // Error handling
-void					error_exit(void);
-int						isnum(char c);
 int						error_syntax(char *str_n);
 int						error_dup(t_stack_node *a, int n);
+void					free_stack(t_stack_node **stack);
+void					free_errors(t_stack_node **a);
 
 // Stack operations
 void					sa(t_stack_node **a, bool print);
@@ -53,22 +53,20 @@ void					rrr(t_stack_node **a, t_stack_node **b, bool print);
 // Sorting algorithms
 void					sort_three(t_stack_node **a);
 void					sort_stacks(t_stack_node **a, t_stack_node **b);
-void					init_nodes_a(t_stack_node *a, t_stack_node *b);
-void					init_nodes_b(t_stack_node *a, t_stack_node *b);
+void					init_a_nodes(t_stack_node *a, t_stack_node *b);
+void					init_b_nodes(t_stack_node *a, t_stack_node *b);
 void					current_index(t_stack_node *stack);
-void					prep_for_push(t_stack_node **stack, t_stack_node *top,
+void					prep_push(t_stack_node **stack, t_stack_node *top,
 							char stack_name);
 t_stack_node			*get_cheapest(t_stack_node *stack);
 t_stack_node			*find_max(t_stack_node *stack);
 t_stack_node			*find_min(t_stack_node *stack);
-t_stack_node			*find_last(t_stack_node *stack);
 bool					stack_sorted(t_stack_node *stack);
 int						stack_len(t_stack_node *stack);
 
 // Utilities
-t_stack_node			*create_node(int number);
-void					init_stack(t_stack_node **a, char **argv);
-void					free_stack(t_stack_node **stack);
+t_stack_node			*find_last(t_stack_node *stack);
+void					init_stack_a(t_stack_node **a, char **argv);
 long					ft_atol(const char *str);
 char					**ft_split(char const *s, char c);
 

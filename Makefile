@@ -6,7 +6,7 @@
 #    By: lucinguy <lucinguy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/10 11:38:44 by lucinguy          #+#    #+#              #
-#    Updated: 2026/01/29 17:31:58 by lucinguy         ###   ########.fr        #
+#    Updated: 2026/01/30 18:42:41 by lucinguy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,6 @@ SRCS		:= \
 	c_rotate.c \
 	c_rev_rotate.c \
 	c_swap.c \
-	c_sort_three.c \
 	sort_three.c \
 	sort_stacks.c \
 	ft_atol.c \
@@ -52,7 +51,7 @@ $(NAME): $(OBJS) $(PRINTF_LIB)
 	$(CC) $(CFLAGS) $(INCS) -c $< -o $@
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) c_sort_three.o
 	$(MAKE) -C $(PRINTF_DIR) clean
 
 fclean: clean

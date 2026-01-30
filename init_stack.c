@@ -6,7 +6,7 @@
 /*   By: lucinguy <lucinguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 12:17:49 by lucinguy          #+#    #+#             */
-/*   Updated: 2026/01/26 13:43:42 by lucinguy         ###   ########.fr       */
+/*   Updated: 2026/01/30 18:42:41 by lucinguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,14 +43,14 @@ void	init_stack_a(t_stack_node **a, char **argv)
 	int		i;
 
 	i = 0;
-	while (argv[1])
+	while (argv[i])
 	{
 		if (error_syntax(argv[i]))
 			free_errors(a);
 		n = ft_atol(argv[i]);
 		if (n > INT_MAX || n < INT_MIN)
 			free_errors(a);
-		if (error_duplicate(*a, (int)n))
+		if (error_dup(*a, (int)n))
 			free_errors(a);
 		append_node(a, (int)n);
 		i++;

@@ -6,7 +6,7 @@
 /*   By: lucinguy <lucinguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 11:55:40 by lucinguy          #+#    #+#             */
-/*   Updated: 2026/01/28 13:16:38 by lucinguy         ###   ########.fr       */
+/*   Updated: 2026/01/30 18:42:41 by lucinguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static void	rotate(t_stack_node **stack)
 	last_node->next->next = NULL;
 }
 
-void	ra(t_stack_npde **a, bool print)
+void	ra(t_stack_node **a, bool print)
 {
 	rotate(a);
 	if (!print)
