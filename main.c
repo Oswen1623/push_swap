@@ -12,6 +12,20 @@
 
 #include "push_swap.h"
 
+static void	print_stack_result(t_stack_node *a)
+{
+	t_stack_node	*current;
+
+	current = a;
+	ft_printf("Result:");
+	while (current)
+	{
+		ft_printf(" %d", current->nbr);
+		current = current->next;
+	}
+	ft_printf("\n");
+}
+
 int	main(int argc, char **argv)
 {
 	t_stack_node	*a;
@@ -38,6 +52,7 @@ int	main(int argc, char **argv)
 		else
 			sort_stacks(&a, &b);
 	}
+	print_stack_result(a);
 	free_stack(&a);
 	if (split_args)
 	{
