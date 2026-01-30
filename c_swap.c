@@ -6,7 +6,7 @@
 /*   By: lucinguy <lucinguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 13:38:02 by lucinguy          #+#    #+#             */
-/*   Updated: 2026/01/28 13:39:10 by lucinguy         ###   ########.fr       */
+/*   Updated: 2026/01/30 19:39:29 by lucinguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,14 @@ static void	swap(t_stack_node **head)
 void	sa(t_stack_node **a, bool print)
 {
 	swap(a);
-	if (!print)
+	if (print)
 		ft_printf("sa\n");
 }
 
 void	sb(t_stack_node **b, bool print)
 {
 	swap(b);
-	if (!print)
+	if (print)
 		ft_printf("sb\n");
 }
 
@@ -43,6 +43,6 @@ void	ss(t_stack_node **a, t_stack_node **b, bool print)
 {
 	swap(a);
 	swap(b);
-	if (!print)
+	if (print)
 		ft_printf("ss\n");
 }

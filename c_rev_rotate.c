@@ -6,7 +6,7 @@
 /*   By: lucinguy <lucinguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 16:30:43 by lucinguy          #+#    #+#             */
-/*   Updated: 2026/01/28 11:34:37 by lucinguy         ###   ########.fr       */
+/*   Updated: 2026/01/30 19:39:29 by lucinguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,14 @@ static void	rev_rotate(t_stack_node **stack)
 void	rra(t_stack_node **a, bool print)
 {
 	rev_rotate(a);
-	if (!print)
+	if (print)
 		ft_printf("rra\n");
 }
 
 void	rrb(t_stack_node **b, bool print)
 {
 	rev_rotate(b);
-	if (!print)
+	if (print)
 		ft_printf("rrb\n");
 }
 
@@ -44,6 +44,6 @@ void	rrr(t_stack_node **a, t_stack_node **b, bool print)
 {
 	rev_rotate(a);
 	rev_rotate(b);
-	if (!print)
+	if (print)
 		ft_printf("rrr\n");
 }

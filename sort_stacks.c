@@ -6,7 +6,7 @@
 /*   By: lucinguy <lucinguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 13:44:24 by lucinguy          #+#    #+#             */
-/*   Updated: 2026/01/30 18:42:41 by lucinguy         ###   ########.fr       */
+/*   Updated: 2026/01/30 19:39:28 by lucinguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ static void	rotate_nodes(t_stack_node **a, t_stack_node **b,
 	if (reverse)
 	{
 		while (*b != cheapest_node->target_node && *a != cheapest_node)
-			rrr(a, b, false);
+			rrr(a, b, true);
 	}
 	else
 	{
 		while (*b != cheapest_node->target_node && *a != cheapest_node)
-			rr(a, b, false);
+			rr(a, b, true);
 	}
 	current_index(*a);
 	current_index(*b);
@@ -41,13 +41,13 @@ static void	move_a_to_b(t_stack_node **a, t_stack_node **b)
 		rotate_nodes(a, b, cheapest_node, 1);
 	prep_push(a, cheapest_node, 'a');
 	prep_push(b, cheapest_node->target_node, 'b');
-	pb(b, a, false);
+	pb(b, a, true);
 }
 
 static void	move_b_to_a(t_stack_node **a, t_stack_node **b)
 {
 	prep_push(a, (*b)->target_node, 'a');
-	pa(a, b, false);
+	pa(a, b, true);
 }
 
 static void	min_on_top(t_stack_node **a)
@@ -55,9 +55,9 @@ static void	min_on_top(t_stack_node **a)
 	while ((*a)->nbr != find_min(*a)->nbr)
 	{
 		if (find_min(*a)->above_median)
-			ra(a, false);
+			ra(a, true);
 		else
-			rra(a, false);
+			rra(a, true);
 	}
 }
 
@@ -67,7 +67,7 @@ void	sort_stacks(t_stack_node **a, t_stack_node **b)
 
 	len_a = stack_len(*a);
 	if (len_a-- > 3 && !stack_sorted(*a))
-		pb(b, a, false);
+		pb(b, a, true);
 	if (len_a-- > 3 && !stack_sorted(*a))
 		pb(b, a, false);
 	while (len_a-- > 3 && !stack_sorted(*a))

@@ -6,7 +6,7 @@
 /*   By: lucinguy <lucinguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 13:45:35 by lucinguy          #+#    #+#             */
-/*   Updated: 2026/01/21 13:49:00 by lucinguy         ###   ########.fr       */
+/*   Updated: 2026/01/30 19:39:29 by lucinguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void	sort_three(t_stack_node **a)
 
 	biggest_node = find_max(*a);
 	if (biggest_node == *a)
-		ra(a, false);
+		ra(a, true);
 	else if ((*a)->next == biggest_node)
-		rra(a, false);
+		rra(a, true);
 	if ((*a)->nbr > (*a)->next->nbr)
-		sa(a, false);
+		sa(a, true);
 }
