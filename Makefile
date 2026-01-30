@@ -6,7 +6,7 @@
 #    By: lucinguy <lucinguy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/10 11:38:44 by lucinguy          #+#    #+#              #
-#    Updated: 2026/01/23 14:00:36 by lucinguy         ###   ########.fr        #
+#    Updated: 2026/01/29 17:31:58 by lucinguy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,11 +21,18 @@ PRINTF_LIB	:= $(PRINTF_DIR)/libftprintf.a
 
 SRCS		:= \
 	main.c \
-	push_swap.c \
-	checker.c \
 	init_stack.c \
 	utils_stacks.c \
+	errors.c \
+	a_to_b.c \
+	b_to_a.c \
+	c_push.c \
+	c_rotate.c \
+	c_rev_rotate.c \
+	c_swap.c \
+	c_sort_three.c \
 	sort_three.c \
+	sort_stacks.c \
 	ft_atol.c \
 	ft_split.c
 

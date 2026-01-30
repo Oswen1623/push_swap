@@ -6,7 +6,7 @@
 /*   By: lucinguy <lucinguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 12:35:06 by lucinguy          #+#    #+#             */
-/*   Updated: 2026/01/23 14:04:03 by lucinguy         ###   ########.fr       */
+/*   Updated: 2026/01/29 17:31:59 by lucinguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,45 @@ typedef struct s_stack_node
 	struct s_stack_node	*prev;
 }						t_stack_node;
 
-// Push swap
-/// Principal
-
-// Algorithm
-
-/// Utils
-long					ft_atol(const char *str);
+// Error handling
+void					error_exit(void);
 int						isnum(char c);
+int						error_syntax(char *str_n);
+int						error_dup(t_stack_node *a, int n);
 
-// Utils
+// Stack operations
+void					sa(t_stack_node **a, bool print);
+void					sb(t_stack_node **b, bool print);
+void					ss(t_stack_node **a, t_stack_node **b, bool print);
+void					pa(t_stack_node **a, t_stack_node **b, bool print);
+void					pb(t_stack_node **b, t_stack_node **a, bool print);
+void					ra(t_stack_node **a, bool print);
+void					rb(t_stack_node **b, bool print);
+void					rr(t_stack_node **a, t_stack_node **b, bool print);
+void					rra(t_stack_node **a, bool print);
+void					rrb(t_stack_node **b, bool print);
+void					rrr(t_stack_node **a, t_stack_node **b, bool print);
+
+// Sorting algorithms
+void					sort_three(t_stack_node **a);
+void					sort_stacks(t_stack_node **a, t_stack_node **b);
+void					init_nodes_a(t_stack_node *a, t_stack_node *b);
+void					init_nodes_b(t_stack_node *a, t_stack_node *b);
+void					current_index(t_stack_node *stack);
+void					prep_for_push(t_stack_node **stack, t_stack_node *top,
+							char stack_name);
+t_stack_node			*get_cheapest(t_stack_node *stack);
+t_stack_node			*find_max(t_stack_node *stack);
+t_stack_node			*find_min(t_stack_node *stack);
+t_stack_node			*find_last(t_stack_node *stack);
+bool					stack_sorted(t_stack_node *stack);
+int						stack_len(t_stack_node *stack);
+
+// Utilities
+t_stack_node			*create_node(int number);
+void					init_stack(t_stack_node **a, char **argv);
+void					free_stack(t_stack_node **stack);
+long					ft_atol(const char *str);
 char					**ft_split(char const *s, char c);
 
 #endif
