@@ -6,7 +6,7 @@
 /*   By: lucinguy <lucinguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 13:44:24 by lucinguy          #+#    #+#             */
-/*   Updated: 2026/01/30 19:39:28 by lucinguy         ###   ########.fr       */
+/*   Updated: 2026/02/09 17:02:33 by lucinguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	sort_stacks(t_stack_node **a, t_stack_node **b)
 	if (len_a-- > 3 && !stack_sorted(*a))
 		pb(b, a, true);
 	if (len_a-- > 3 && !stack_sorted(*a))
-		pb(b, a, false);
+		pb(b, a, true);
 	while (len_a-- > 3 && !stack_sorted(*a))
 	{
 		init_a_nodes(*a, *b);

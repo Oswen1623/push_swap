@@ -6,7 +6,7 @@
 /*   By: lucinguy <lucinguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 13:41:15 by lucinguy          #+#    #+#             */
-/*   Updated: 2026/01/26 14:52:40 by lucinguy         ###   ########.fr       */
+/*   Updated: 2026/02/09 17:15:44 by lucinguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ t_stack_node	*find_min(t_stack_node *stack)
 	if (!stack)
 		return (0);
 	min = LONG_MAX;
+	min_node = NULL;
 	while (stack)
 	{
 		if (stack->nbr < min)

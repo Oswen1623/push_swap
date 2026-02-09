@@ -6,7 +6,7 @@
 /*   By: lucinguy <lucinguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 15:25:58 by lucinguy          #+#    #+#             */
-/*   Updated: 2026/01/30 19:39:29 by lucinguy         ###   ########.fr       */
+/*   Updated: 2026/02/09 17:23:55 by lucinguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ int	main(int argc, char **argv)
 {
 	t_stack_node	*a;
 	t_stack_node	*b;
-	char		**split_args;
+	char			**split_args;
+	int				i;
 
 	a = NULL;
 	b = NULL;
@@ -41,8 +42,6 @@ int	main(int argc, char **argv)
 	free_stack(&a);
 	if (split_args)
 	{
-		int	i;
-
 		i = 0;
 		while (split_args[i])
 			free(split_args[i++]);

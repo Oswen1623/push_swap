@@ -6,11 +6,23 @@
 /*   By: lucinguy <lucinguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 12:17:49 by lucinguy          #+#    #+#             */
-/*   Updated: 2026/01/30 19:39:29 by lucinguy         ###   ########.fr       */
+/*   Updated: 2026/02/09 16:55:30 by lucinguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static void	init_node(t_stack_node *node, int n)
+{
+	node->nbr = n;
+	node->index = 0;
+	node->push_cost = 0;
+	node->above_median = false;
+	node->cheapest = false;
+	node->target_node = NULL;
+	node->next = NULL;
+	node->prev = NULL;
+}
 
 static void	append_node(t_stack_node **stack, int n)
 {
@@ -22,13 +34,9 @@ static void	append_node(t_stack_node **stack, int n)
 	node = malloc(sizeof(t_stack_node));
 	if (!node)
 		return ;
-	node->next = NULL;
-	node->nbr = n;
+	init_node(node, n);
 	if (!(*stack))
-	{
 		*stack = node;
-		node->prev = NULL;
-	}
 	else
 	{
 		last_node = find_last(*stack);
