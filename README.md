@@ -1,0 +1,24 @@
+This project has been created as part of the 42 curriculum by lucinguy.
+
+Description
+
+The goal of this project is to write an algorithm sorting given numbers, placed in a stack 'a', using another empty stack 'b', with the lowest possible number of operations. The program must be written in C.
+
+Instructions
+
+A Makefile must be turned in to compile the source files. We have to write a program named push_swap that takes as an argument the stack a formatted as a list of integers. The first argument should be at the top of the stack. The program must display the shortest sequence of operations necessary to sort the 'a' stack, the smallest number at the top, the biggest at the bottom. Numbers must be followed by a newline. If no parameters are specified, the program must not display anything and should
+return to the prompt. In case of error, it must display "Error" followed by an ’\n’ on the standard error. Errors include, for example: some arguments not being integers, some arguments exceeding the integer limits, and/or the presence of duplicates.
+To determine wether the program sorts correctly, a checker has been provided, and a benchmark has been established to evaluate the effectiveness of the sorting algorithm :
+For maximum project validation (100%) :
+◦ Sort 100 random numbers in fewer than 700 operations.
+◦ Sort 500 random numbers in no more than 5500 operations.
+For minimal project validation :
+    ◦ 100 numbers in under 1100 operations and 500 numbers in under
+8500 operations
+    ◦ 100 numbers in under 700 operations and 500 numbers in under
+11500 operations
+    ◦ 100 numbers in under 1300 operations and 500 numbers in under
+5500 operations 
+
+
+Resources
