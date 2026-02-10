@@ -24,9 +24,17 @@ https://youtu.be/wRvipSG4Mmk?si=TfFDLsx-GHhyUbNP
 I also went through these Medium articles to help visualise the turkish algorithm steps :  
 https://pure-forest.medium.com/push-swap-turk-algorithm-explained-in-6-steps-4c6650a458c0  
 https://medium.com/@ayogun/push-swap-c1f5d2d41e97  
-AI has only be used as a debugger or to refactor long functions.  
+AI has only be used as a debugger, a tester, or to refactor long functions.  
 
 Usage examples :  
 
-'make' to compile the source files.  
-'./push_swap [numbers]' to execute the program with the [numbers] given as parameters.  
+```make``` to compile the source files.  
+```./push_swap [numbers]``` to execute the program with the [numbers] given as parameters.  
+To test with 100 numbers :  
+```ARG=$(seq 1 100 | sort -R | tr '\n' ' ')```  
+```./push_swap $ARG | wc -l```  
+```./push_swap $ARG | ./checker_Mac $ARG```  
+To test with 500 numbers :  
+```ARG=$(seq 1 500 | sort -R | tr '\n' ' ')```  
+```./push_swap $ARG | wc -l```  
+```./push_swap $ARG | ./checker_Mac $ARG```  
