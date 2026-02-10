@@ -22,3 +22,6 @@ For minimal project validation :
 
 
 Resources
+
+This tutorial has helped me a lot through this project, since it was kinda complex. The algorithm is well explained and detailed and the code in general is clear. Altough, I changed some things that didn't feel right or comfortable to me :
+https://youtu.be/wRvipSG4Mmk?si=TfFDLsx-GHhyUbNP
