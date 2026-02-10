@@ -33,8 +33,8 @@ Usage examples :
 To test with 100 numbers :  
 ```ARG=$(seq 1 100 | sort -R | tr '\n' ' ')```  
 ```./push_swap $ARG | wc -l```  
-```./push_swap $ARG | ./checker_Mac $ARG```  
+```./push_swap $ARG | ./checker_OS $ARG```  
 To test with 500 numbers :  
 ```ARG=$(seq 1 500 | sort -R | tr '\n' ' ')```  
 ```./push_swap $ARG | wc -l```  
-```./push_swap $ARG | ./checker_Mac $ARG```  
+```./push_swap $ARG | ./checker_OS $ARG```  
