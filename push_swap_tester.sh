@@ -6,8 +6,13 @@ CYAN='\033[0;36m'
 END="\033[0m"
 NC="\033[0m"
 YELLOW='\e[1;33m'
+<<<<<<< HEAD
 N=300
 MYPATH=/home/swen/42/Devoirs/Cercle2/push_swap
+=======
+N=100
+MYPATH=/home/lucinguy/cercle2/push_swap
+>>>>>>> b313b55cbc95ce446b44d300c23f8067b30c4b1c
 
 print_histogram() {
     local title="$1"
@@ -247,11 +252,19 @@ for ((i = 0; i < 20; i++)); do
     VAL_CHECK=$(valgrind ${MYPATH}/push_swap $ARG 2>&1 | grep lost | grep -v " 0 bytes")
     RESULT=$(${MYPATH}/push_swap $ARG)
     if [ -z "$RESULT" ]; then
+<<<<<<< HEAD
         TEMP=0
         TEMP2="OK"
     else
         TEMP=$(echo "$RESULT" | wc -l)
         TEMP2=$(echo "$RESULT" | ${MYPATH}/checker_linux $ARG)
+=======
+	    TEMP=0
+	    TEMP2="OK"
+    else
+    	TEMP=$(echo "$RESULT" | wc -l)
+    	TEMP2=$(echo "$RESULT" | ${MYPATH}/checker_linux $ARG)
+>>>>>>> b313b55cbc95ce446b44d300c23f8067b30c4b1c
     fi
     if [ "$TEMP" -gt "$MAX" ]; then
         MAX=$TEMP
@@ -259,7 +272,11 @@ for ((i = 0; i < 20; i++)); do
     if [ "$TEMP" -lt "$MIN" ]; then
         MIN=$TEMP
     fi
+<<<<<<< HEAD
     if [ "$TEMP2" = "KO" ] || [ "$TEMP2" = "Error" ]; then
+=======
+    if [ "$TEMP2" = "KO" ]; then
+>>>>>>> b313b55cbc95ce446b44d300c23f8067b30c4b1c
 	echo "KO: $ARG"
     fi
     if [ ! -z "$VAL_CHECK" ];
@@ -296,6 +313,56 @@ TEMP=0
 
 echo ""
 echo -e "${CYAN}-----------------------------------------------"
+<<<<<<< HEAD
+=======
+echo -e "-------------------4 Elements------------------"
+echo -e "-----------------------------------------------${END}"
+echo ""
+
+VAL_NUM=0
+for ((i = 0; i < 20; i++)); do
+    ARG=$(shuf -i 0-2500 -n 4 | tr '\n' ' ')
+    ARG="${ARG% }"
+    VAL_CHECK=$(valgrind ${MYPATH}/push_swap $ARG 2>&1 | grep lost | grep -v " 0 bytes")
+    RESULT=$(${MYPATH}/push_swap $ARG)
+    if [ -z "$RESULT" ]; then
+            TEMP=0
+            TEMP2="OK"
+    else
+        TEMP=$(echo "$RESULT" | wc -l)
+        TEMP2=$(echo "$RESULT" | ${MYPATH}/checker_linux $ARG)
+    fi
+    if [ "$TEMP" -gt "$MAX" ]; then
+        MAX=$TEMP
+    fi
+    if [ "$TEMP" -lt "$MIN" ]; then
+        MIN=$TEMP
+    fi
+    if [ "$TEMP2" = "KO" ]; then
+        echo "KO: $ARG"
+    fi
+    if [ ! -z "$VAL_CHECK" ];
+    then
+        echo -e "${RED}LEAK${END}"
+        echo -e "valgrind ./push_swap $ARG"
+        (( VAL_NUM++ ))
+    fi
+done
+
+if [ "$VAL_NUM" -gt 0 ]; then
+        echo -e "${RED}LEAK KO${END}"
+else
+        echo -e "${GREEN}LEAK OK${END}"
+fi
+echo ""
+
+MAX=0
+MIN=99999
+TEMP=0
+
+echo ""
+echo -e "${CYAN}-----------------------------------------------"
+>>>>>>> b313b55cbc95ce446b44d300c23f8067b30c4b1c
 echo -e "-------------------5 Elements------------------"
 echo -e "-----------------------------------------------${END}"
 echo ""
@@ -307,8 +374,13 @@ for ((i = 0; i < 30; i++)); do
     VAL_CHECK=$(valgrind ${MYPATH}/push_swap $ARG 2>&1 | grep lost | grep -v " 0 bytes")
     RESULT=$(${MYPATH}/push_swap $ARG)
     if [ -z "$RESULT" ]; then
+<<<<<<< HEAD
         TEMP=0
         TEMP2="OK"
+=======
+            TEMP=0
+            TEMP2="OK"
+>>>>>>> b313b55cbc95ce446b44d300c23f8067b30c4b1c
     else
         TEMP=$(echo "$RESULT" | wc -l)
         TEMP2=$(echo "$RESULT" | ${MYPATH}/checker_linux $ARG)
@@ -319,7 +391,11 @@ for ((i = 0; i < 30; i++)); do
     if [ "$TEMP" -lt "$MIN" ]; then
         MIN=$TEMP
     fi
+<<<<<<< HEAD
     if [ "$TEMP2" = "KO" ] || [ "$TEMP2" = "Error" ]; then
+=======
+    if [ "$TEMP2" = "KO" ]; then
+>>>>>>> b313b55cbc95ce446b44d300c23f8067b30c4b1c
 	echo "KO: $ARG"
     fi
     if [ ! -z "$VAL_CHECK" ];
@@ -366,6 +442,7 @@ for ((i = 0; i < N; i++)); do
     ARG=$(shuf -i 0-2500 -n 100 | tr '\n' ' ')
     ARG="${ARG% }"
     RESULT=$(${MYPATH}/push_swap $ARG)
+<<<<<<< HEAD
     if [ -z "$RESULT" ]; then
         TEMP=0
         TEMP2="OK"
@@ -373,6 +450,10 @@ for ((i = 0; i < N; i++)); do
         TEMP=$(echo "$RESULT" | wc -l)
         TEMP2=$(echo "$RESULT" | ${MYPATH}/checker_linux $ARG)
     fi
+=======
+    TEMP=$(echo "$RESULT" | wc -l)
+    TEMP2=$(echo "$RESULT" | ${MYPATH}/checker_linux $ARG)
+>>>>>>> b313b55cbc95ce446b44d300c23f8067b30c4b1c
     ARRAY+=($TEMP)
     MOY=$((MOY + TEMP))
     if [ "$TEMP" -gt "$MAX" ]; then
@@ -381,7 +462,11 @@ for ((i = 0; i < N; i++)); do
     if [ "$TEMP" -lt "$MIN" ]; then
         MIN=$TEMP
     fi
+<<<<<<< HEAD
     if [ "$TEMP2" = "KO" ] || [ "$TEMP2" = "Error" ]; then
+=======
+    if [ "$TEMP2" = "KO" ]; then
+>>>>>>> b313b55cbc95ce446b44d300c23f8067b30c4b1c
 	echo "KO: $ARG"
     fi
 done
@@ -440,6 +525,7 @@ for ((i = 0; i < N; i++)); do
     ARG=$(shuf -i 0-2500 -n 500 | tr '\n' ' ')
     ARG="${ARG% }"
     RESULT=$(${MYPATH}/push_swap $ARG)
+<<<<<<< HEAD
     if [ -z "$RESULT" ]; then
         TEMP=0
         TEMP2="OK"
@@ -447,6 +533,10 @@ for ((i = 0; i < N; i++)); do
         TEMP=$(echo "$RESULT" | wc -l)
         TEMP2=$(echo "$RESULT" | ${MYPATH}/checker_linux $ARG)
     fi
+=======
+    TEMP=$(echo "$RESULT" | wc -l)
+    TEMP2=$(echo "$RESULT" | ${MYPATH}/checker_linux $ARG)
+>>>>>>> b313b55cbc95ce446b44d300c23f8067b30c4b1c
     MOY=$((MOY + TEMP))
     ARRAY+=($TEMP)
     if [ "$TEMP" -gt "$MAX" ]; then
@@ -455,7 +545,11 @@ for ((i = 0; i < N; i++)); do
     if [ "$TEMP" -lt "$MIN" ]; then
         MIN=$TEMP
     fi
+<<<<<<< HEAD
     if [ "$TEMP2" = "KO" ] || [ "$TEMP2" = "Error" ]; then
+=======
+    if [ "$TEMP2" = "KO" ]; then
+>>>>>>> b313b55cbc95ce446b44d300c23f8067b30c4b1c
 	echo "KO: $ARG"
     fi
 done

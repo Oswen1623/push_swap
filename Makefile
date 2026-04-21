@@ -6,7 +6,7 @@
 #    By: lucinguy <lucinguy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/10 11:38:44 by lucinguy          #+#    #+#              #
-#    Updated: 2026/01/30 19:03:02 by lucinguy         ###   ########.fr        #
+#    Updated: 2026/03/04 17:23:27 by lucinguy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,7 @@ $(NAME): $(OBJS) $(PRINTF_LIB)
 	$(CC) $(CFLAGS) $(INCS) -c $< -o $@
 
 clean:
-	$(RM) $(OBJS) c_sort_three.o
+	$(RM) $(OBJS)
 	$(MAKE) -C $(PRINTF_DIR) clean
 
 fclean: clean
